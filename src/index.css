@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Rubik&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Language: css */
+:root {
+    --clr-100: #f8f9fa;
+    --clr-200: #e0e1dc;
+    --clr-400: #7c8da5;
+    --clr-600: #475b74;
+    --clr-800: #1d2538;
+
+    --ff-primary: 'Monoton', cursive;
+    --ff-secondary: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--clr-100);
+    font-family: var(--ff-secondary);
+}
+
+/*
+    ===============
+    Utility Classes
+    ===============
+*/
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.ff-primary {
+    font-family: var(--ff-primary);
+}
+
+.ff-secondary {
+    font-family: var(--ff-secondary);
+}

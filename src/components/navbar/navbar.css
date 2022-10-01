@@ -1,0 +1,17 @@
+.navbar {
+    background-color: var(--clr-800);
+    color: var(--clr-200);
+    column-gap: 0.5em;
+    padding-block: 0.5em;
+    font-size: 1.05rem;
+}
+
+.navbar .link {
+    color: var(--clr-200);
+    text-decoration: none;
+    transition: color 250ms ease-in-out;
+}
+
+.navbar .link:hover {
+    color: var(--clr-400);
+}

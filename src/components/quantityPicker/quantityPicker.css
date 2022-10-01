@@ -1,0 +1,22 @@
+.picker {
+    display: inline-block;
+    border-radius: 0.25em;
+    border: 2px solid var(--clr-800);
+    background-color: var(--clr-600);
+    color: var(--clr-200);
+}
+
+.picker button,
+.picker span {
+    display: inline-block;
+    width: 4ch;
+    text-align: center;
+}
+
+.picker .picker-btn {
+    cursor: pointer;
+    aspect-ratio: 1;
+    border: none;
+    color: var(--clr-200);
+    background-color: var(--clr-800);
+}
