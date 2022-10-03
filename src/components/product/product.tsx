@@ -9,27 +9,38 @@
  * @returns a product card
  */
 
-import { FC } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { QuantityPicker } from '../../components/quantityPicker'
 import { IProduct } from '../../types'
 
 import './product.css'
 
-const fakePreviousPrice = (currentPrice: number): number => {
-    return currentPrice + 10 + Math.floor(Math.random() * 100)
-}
+export const Product: FC<IProduct> = ({ image, title, description, price, availableUnits = 1 }) => {
+    const [total, setTotal] = useState(price)
 
-export const Product: FC<IProduct> = ({ image, title, description, price }) => {
+    const updateTotal = (quantity: number): void => setTotal(quantity * price)
+
+
+    const fakePreviousPrice = useMemo(() => price + 10 + Math.floor(Math.random() * 100), [price])
+
     return (
         <div className='product'>
             <img src={image} alt={title} className='product_image' />
-            <h3 className='product_title'>{title} </h3>
-            <div className="product_price"> <s>${fakePreviousPrice(price)}</s> ${price} </div>
+            <div className='product_details'>
+                <h3 className='product_title'>{title} </h3>
+                <div className="product_price"> <s>${fakePreviousPrice.toFixed(2)}</s> ${price.toFixed(2)} </div>
+                <div className="product_total"> Total: ${total.toFixed(2)} </div>
+            </div>
+
             <p className='product_description'>{description}</p>
             <div className="product_actions">
-                <QuantityPicker />
+                <QuantityPicker onChange={updateTotal} />
                 <button className='product_add'>Add to cart</button>
             </div>
+
+            <p className="product_pieces">
+                {availableUnits} pieces available
+            </p>
         </div>
     )
 }

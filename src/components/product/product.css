@@ -14,6 +14,7 @@
         box-shadow 250ms 150ms ease-out;
     cursor: grab;
     max-width: 500px;
+    text-align: center;
 }
 
 .product:hover {
@@ -25,7 +26,9 @@
 .product .product_title,
 .product .product_image,
 .product .product_price,
-.product .product_description {
+.product .product_total,
+.product .product_description,
+.product .product_pieces {
     transition: color 250ms ease-in;
 }
 
@@ -45,10 +48,18 @@
     transition-delay: 150ms;
 }
 
+.product .product_total {
+    transition-delay: 200ms;
+}
+
 .product .product_description {
     transition: color 250ms 400ms ease-in;
     transition-delay: 300ms;
     text-align: justify;
+}
+
+.product .product_pieces {
+    transition-delay: 350ms;
 }
 
 .product .product_actions {
