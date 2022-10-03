@@ -1,3 +1,16 @@
 .catalog {
     padding: 1em;
 }
+
+.catalog__products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+    justify-items: center;
+}
+
+/* Fit all the columns */
+.catalog_title {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}

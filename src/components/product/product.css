@@ -1,0 +1,70 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--clr-600);
+    row-gap: 0.5em;
+    border-radius: 0.5rem;
+    transition:
+        background-color 250ms 150ms ease-out,
+        color 0ms 250ms,
+        box-shadow 250ms 150ms ease-out;
+    cursor: grab;
+    max-width: 500px;
+}
+
+.product:hover {
+    background-color: var(--clr-600);
+    color: var(--clr-200);
+    box-shadow: 0 0.5em 1rem 0.25em var(--clr-600);
+}
+
+.product .product_title,
+.product .product_image,
+.product .product_price,
+.product .product_description {
+    transition: color 250ms ease-in;
+}
+
+.product .product_title {
+    transition-delay: color 0ms;
+}
+
+.product .product_image {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition-delay: 50ms;
+}
+
+.product .product_price {
+    transition-delay: 150ms;
+}
+
+.product .product_description {
+    transition: color 250ms 400ms ease-in;
+    transition-delay: 300ms;
+    text-align: justify;
+}
+
+.product .product_actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.product .product_actions .product_add {
+    padding: 0.5em 1em;
+    border: 2px solid var(--clr-800);
+    background-color: var(--clr-800);
+    font-family: var(--ff-secondary);
+    color: var(--clr-200);
+    border-radius: 0.5rem;
+    transition: background-color 250ms ease-out;
+    cursor: cell;
+}
