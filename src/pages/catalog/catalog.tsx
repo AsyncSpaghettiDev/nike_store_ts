@@ -1,6 +1,6 @@
-import './catalog.css'
+import classNames from './catalog.module.css'
 
-import { productList } from './products'
+import { DataService } from '../../services/dataService'
 
 import { useEffect, useState } from 'react'
 import { IProduct } from '../../types'
@@ -11,13 +11,16 @@ export const Catalog = () => {
     const [products, setProducts] = useState<IProduct[]>([])
 
     useEffect(() => {
-        setProducts(productList)
+        console.log('Catalog was loaded')
+        const dataService = new DataService()
+        setProducts(dataService.getCatalog())
     }, [])
 
     return (
-        <div className="catalog">
-            <h1 className='catalog_title'>Check our amazing catalog</h1>
-            <div className="catalog__products">
+        <div className={classNames.catalog}>
+            <h1 className={classNames.title}>Check our amazing catalog</h1>
+            <h2 className={classNames.subtitle}>We have {products.length} amazing products waiting for you </h2>
+            <div className={classNames.products}>
                 {products.map((product) => (
                     <Product key={product.id} {...product} />
                 ))}

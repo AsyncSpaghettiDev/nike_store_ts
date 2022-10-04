@@ -34,7 +34,7 @@ export const Product: FC<IProduct> = ({ image, title, description, price, availa
 
             <p className='product_description'>{description}</p>
             <div className="product_actions">
-                <QuantityPicker onChange={updateTotal} />
+                <QuantityPicker onChange={updateTotal} max={availableUnits} />
                 <button className='product_add'>Add to cart</button>
             </div>
 

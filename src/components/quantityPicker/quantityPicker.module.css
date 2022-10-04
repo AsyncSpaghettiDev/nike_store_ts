@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-.picker .picker-btn {
+.picker_btn {
     cursor: pointer;
     aspect-ratio: 1;
     border: none;

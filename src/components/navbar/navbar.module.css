@@ -8,13 +8,13 @@
     flex-wrap: wrap;
 }
 
-.navbar .link {
+.link {
     color: var(--clr-200);
     text-decoration: none;
     transition: color 250ms ease-in-out;
 }
 
-.navbar .link:hover {
+.link:hover {
     color: var(--clr-400);
 }
 

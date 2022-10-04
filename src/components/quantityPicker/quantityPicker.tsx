@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
-import './quantityPicker.css'
+import classNames from './quantityPicker.module.css'
 
 interface QuantityPickerProps {
     onChange: (quantity: number) => void
+    max: number
 }
 
-export const QuantityPicker = ({ onChange }: QuantityPickerProps) => {
+export const QuantityPicker = ({ onChange, max }: QuantityPickerProps) => {
     // Hooks
     const [quantity, setQuantity] = useState<number>(1)
 
@@ -17,15 +18,15 @@ export const QuantityPicker = ({ onChange }: QuantityPickerProps) => {
 
 
     // Methods
-    const increment = () => setQuantity(quantity + 1)
+    const increment = () => quantity < max && setQuantity(quantity + 1)
 
     const decrement = () => quantity > 1 && setQuantity(quantity - 1)
 
     return (
-        <div className='picker'>
-            <button disabled={quantity <= 1} onClick={decrement} className='picker-btn'>-</button>
+        <div className={classNames.picker}>
+            <button disabled={quantity <= 1} onClick={decrement} className={classNames.picker_btn}>-</button>
             <span>{quantity}</span>
-            <button onClick={increment} className='picker-btn'>+</button>
+            <button onClick={increment} className={classNames.picker_btn}>+</button>
         </div>
     )
 }

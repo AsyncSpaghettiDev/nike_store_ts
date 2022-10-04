@@ -2,7 +2,7 @@
     padding: 1em;
 }
 
-.catalog__products {
+.products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
@@ -10,7 +10,12 @@
 }
 
 /* Fit all the columns */
-.catalog_title {
+.title {
     text-align: center;
     margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }

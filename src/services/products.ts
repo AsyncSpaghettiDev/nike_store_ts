@@ -1,4 +1,4 @@
-import { IProduct } from "../../types";
+import { IProduct } from "../types"
 
 export const productList: IProduct[] = [
     {
@@ -47,7 +47,7 @@ export const productList: IProduct[] = [
         title: "Product 6",
         price: 600,
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem.",
-        availableUnits: 0,
+        availableUnits: 11,
     },
     {
         id: 7,
@@ -66,5 +66,3 @@ export const productList: IProduct[] = [
         availableUnits: 7,
     }
 ]
-
-
