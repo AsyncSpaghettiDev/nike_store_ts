@@ -1,0 +1,10 @@
+.product_tiny {
+    width: 200px;
+}
+
+.product_tiny img {
+    width: 100%;
+    aspect-ratio: 1;
+    height: max-content !important;
+    object-fit: scale-down !important;
+}

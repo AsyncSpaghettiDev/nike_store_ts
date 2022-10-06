@@ -4,6 +4,7 @@ import { Footer } from "./components/footer"
 
 // Pages
 import { Catalog } from "./pages/catalog"
+import { Wishlist } from "./components/wishlist"
 
 const App = () => {
 
@@ -12,6 +13,8 @@ const App = () => {
       <Navbar />
 
       <Catalog />
+
+      <Wishlist />
 
       <Footer />
     </div>
