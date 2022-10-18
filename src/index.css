@@ -59,3 +59,19 @@ body {
 .ff-secondary {
     font-family: var(--ff-secondary);
 }
+
+.text-center {
+    text-align: center;
+}
+
+.btn-primary {
+    padding: 0.5em 1em;
+    border: 2px solid var(--clr-800);
+    background-color: var(--clr-800);
+    font-family: var(--ff-secondary);
+    color: var(--clr-200);
+    border-radius: 0.5rem;
+    transition: background-color 250ms ease-out;
+    cursor: cell;
+    text-decoration: none;
+}

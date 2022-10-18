@@ -1,7 +1,7 @@
 .navbar {
     background-color: var(--clr-800);
     color: var(--clr-200);
-    gap: 0.5em;
+    gap: 0.75em;
     padding-block: 0.5em;
     font-size: 1.05rem;
     text-align: center;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import DataService from "../../services/dataService"
 import { IProduct } from "../../types"
-import { TinyProduct } from "../tinyProduct"
+import { TinyProduct } from "../../components/tinyProduct"
 
 import classNames from './wishlist.module.css'
 
@@ -33,7 +33,6 @@ export const Wishlist = () => {
             return setWishlist([...wishlist, product])
 
         alert("Product already in wishlist")
-
     }
 
     return (
