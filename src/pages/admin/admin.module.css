@@ -1,0 +1,20 @@
+.admin_page {
+    padding-block: 0.5em;
+    background-color: var(--clr-200);
+}
+
+.wrapper {
+    display: flex;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 2px solid var(--clr-600);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    flex: 1;
+}

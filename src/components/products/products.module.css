@@ -1,0 +1,54 @@
+.formGroup {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-start: 0.5em;
+    justify-content: center;
+    column-gap: 0.25em;
+}
+
+.formGroup label {
+    flex-basis: 9ch;
+}
+
+.formGroup input {
+    flex-grow: 1;
+    max-width: 25ch;
+    border: none;
+    padding-inline-start: 0.5em;
+    border-radius: 0.5em;
+}
+
+.lbl_img {
+    position: relative;
+}
+
+.lbl_img:hover:after {
+    content: "(taking /images/products/ as root)";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 25ch;
+    font-size: 0.75em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.25em;
+    margin-block-start: 0.5em;
+}
+
+.product h3 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.product img {
+    flex-basis: 100%;
+    max-width: 5ch;
+    border-radius: 0.5em;
+}

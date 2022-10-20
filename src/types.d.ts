@@ -7,3 +7,8 @@ export interface IProduct {
     availableUnits: number;
     price: number;
 }
+
+export interface Coupon {
+    code: string;
+    discount: number;
+}
