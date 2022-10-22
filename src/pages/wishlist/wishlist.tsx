@@ -17,12 +17,18 @@ export const Wishlist = () => {
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => setProductSearch(e.target.value)
 
-    const searchProduct = () => {
-        const product = catalog.find((product) => product.title.toLowerCase() === productSearch.toLowerCase())
+    const searchProduct = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if (productSearch.trim() === '' || productSearch.length < 3)
+            return alert('Please enter a product name')
+
+        const product = catalog.find((product) => product.title.toLowerCase().includes(productSearch.toLowerCase()))
         setProductSearch("")
 
         if (product === undefined)
             return alert("Product not found")
+
         product != undefined && addToWishlist(product)
     }
 
@@ -38,17 +44,17 @@ export const Wishlist = () => {
     return (
         <div className={classNames.wishlist}>
             <h4 className={classNames.title}>My Wish List</h4>
-            <div className={classNames.searchbar}>
-                <label htmlFor="">Enter a product name to add to your wish list</label>
-                <input onChange={handleSearch} value={productSearch} type="text" placeholder="Type the product name" />
-                <button onClick={searchProduct}>Add</button>
-            </div>
-            <ul className={classNames.items}>
+            <form onSubmit={searchProduct} className={classNames.searchbar}>
+                <label htmlFor="add_product">Enter a product name to add to your wish list</label>
+                <input id="add_product" onChange={handleSearch} value={productSearch} type="text" placeholder="Type the product name" />
+                <button>Add</button>
+            </form>
+            <div className={classNames.items}>
                 {wishlist.map((product) => (
                     <TinyProduct key={product.id} image={product.image} title={product.title}></TinyProduct>
                 ))}
 
-            </ul>
+            </div>
         </div>
     )
 }

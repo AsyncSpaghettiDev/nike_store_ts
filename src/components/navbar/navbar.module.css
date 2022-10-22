@@ -1,7 +1,7 @@
 .navbar {
     background-color: var(--clr-800);
     color: var(--clr-200);
-    gap: 0.75em;
+    column-gap: 0.75em;
     padding-block: 0.5em;
     font-size: 1.05rem;
     text-align: center;
@@ -18,8 +18,37 @@
     color: var(--clr-400);
 }
 
+.cart {
+    border: 1px solid var(--clr-200);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    transition: color 250ms ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.cart:hover {
+    background-color: var(--clr-200);
+    color: var(--clr-800);
+}
+
+.cart .link {
+    margin-inline-end: 0.5em;
+    font-size: 1.2rem;
+}
+
+.cart:hover .link {
+    color: var(--clr-800);
+}
+
+.username {
+    flex-basis: 100%;
+    margin: 0;
+}
+
 @media screen and (max-width: 300px) {
     .navbar {
         flex-direction: column;
+        gap: 0.75em;
     }
 }

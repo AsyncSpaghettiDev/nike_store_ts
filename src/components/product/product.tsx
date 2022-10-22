@@ -9,18 +9,22 @@
  * @returns a product card
  */
 
-import { FC, useMemo, useState } from 'react'
+import { FC, useContext, useMemo, useState } from 'react'
 import { QuantityPicker } from '../../components/quantityPicker'
+import { StoreContext } from '../../store'
 import { IProduct } from '../../types'
 
 import './product.css'
 
-export const Product: FC<IProduct> = ({ image, title, description, price, availableUnits = 1 }) => {
+export const Product: FC<IProduct> = ({ id, image, title, description, price, availableUnits = 1 }) => {
     const [total, setTotal] = useState(price)
-
+    const { addToCart } = useContext(StoreContext)
     const updateTotal = (quantity: number): void => setTotal(quantity * price)
 
-
+    const addToCartHandler = () => {
+        const product = { id, image, title, description, price, availableUnits, total }
+        addToCart(product)
+    }
     const fakePreviousPrice = useMemo(() => price + 10 + Math.floor(Math.random() * 100), [price])
 
     return (
@@ -35,7 +39,7 @@ export const Product: FC<IProduct> = ({ image, title, description, price, availa
             <p className='product_description'>{description}</p>
             <div className="product_actions">
                 <QuantityPicker onChange={updateTotal} max={availableUnits} />
-                <button className='product_add'>Add to cart</button>
+                <button className='product_add' onClick={addToCartHandler}>Add to cart</button>
             </div>
 
             <p className="product_pieces">
