@@ -4,10 +4,9 @@ import classNames from './quantityPicker.module.css'
 
 interface QuantityPickerProps {
     onChange: (quantity: number) => void
-    max: number
 }
 
-export const QuantityPicker = ({ onChange, max }: QuantityPickerProps) => {
+export const QuantityPicker = ({ onChange }: QuantityPickerProps) => {
     // Hooks
     const [quantity, setQuantity] = useState<number>(1)
 
@@ -18,7 +17,7 @@ export const QuantityPicker = ({ onChange, max }: QuantityPickerProps) => {
 
 
     // Methods
-    const increment = () => quantity < max && setQuantity(quantity + 1)
+    const increment = () => setQuantity(quantity + 1)
 
     const decrement = () => quantity > 1 && setQuantity(quantity - 1)
 

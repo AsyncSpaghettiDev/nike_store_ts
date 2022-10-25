@@ -1,0 +1,12 @@
+.table {
+    border-collapse: separate;
+    border-spacing: 0.5em 0.5em;
+}
+
+.products {
+    flex: 3;
+}
+
+.receipt {
+    flex: 1;
+}

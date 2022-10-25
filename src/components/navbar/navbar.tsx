@@ -5,7 +5,7 @@ import Badge from 'react-bootstrap/Badge'
 import classNames from './navbar.module.css'
 
 export const Navbar = () => {
-    const { user, cart } = useContext(StoreContext)
+    const { user, getCount } = useContext(StoreContext)
     return (
         <nav className={`${classNames.navbar} flex-center`}>
             <Link className={`ff-secondary ${classNames.link}`} to="/">Home</Link>
@@ -19,7 +19,7 @@ export const Navbar = () => {
                 <span className={`${classNames.link}`}>
                     <i className="fa fa-shopping-cart" aria-hidden="true" />
                 </span>
-                <Badge bg='danger'>{cart.length}</Badge>
+                <Badge bg='danger'>{getCount()}</Badge>
             </Link>
             <p className={classNames.username}>{`Welcome back ${user.name}`}</p>
         </nav>

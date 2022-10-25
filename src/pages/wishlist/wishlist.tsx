@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import DataService from "../../services/dataService"
-import { IProduct } from "../../types"
+import { Product } from "../../types"
 import { TinyProduct } from "../../components/tinyProduct"
 
 import classNames from './wishlist.module.css'
 
 export const Wishlist = () => {
-    const [catalog, setCatalog] = useState<IProduct[]>([])
-    const [wishlist, setWishlist] = useState<IProduct[]>([])
+    const [catalog, setCatalog] = useState<Product[]>([])
+    const [wishlist, setWishlist] = useState<Product[]>([])
     const [productSearch, setProductSearch] = useState<string>("")
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export const Wishlist = () => {
         product != undefined && addToWishlist(product)
     }
 
-    const addToWishlist = (product: IProduct) => {
+    const addToWishlist = (product: Product) => {
         // Check if product is already in wishlist
         const productInWishlist = wishlist.find((item) => item.title.toLowerCase() === product.title.toLowerCase())
         if (productInWishlist === undefined)

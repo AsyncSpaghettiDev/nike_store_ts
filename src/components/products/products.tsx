@@ -1,19 +1,19 @@
 import { useState } from "react"
-import { IProduct } from "../../types"
+import { Product } from "../../types"
 import classNames from "./products.module.css"
 
-const INITIAL_PRODUCT: IProduct = {
+const INITIAL_PRODUCT: Product = {
     id: 0,
     image: '',
     title: '',
     description: '',
-    availableUnits: 1,
     price: 1,
+    category: 'none'
 }
 
 export const Products = () => {
-    const [product, setProduct] = useState<IProduct>(INITIAL_PRODUCT)
-    const [products, setProducts] = useState<IProduct[]>([])
+    const [product, setProduct] = useState<Product>(INITIAL_PRODUCT)
+    const [products, setProducts] = useState<Product[]>([])
 
     const handleProductChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type } = e.target
@@ -54,8 +54,8 @@ export const Products = () => {
                     <input value={product.description} type="text" name="description" id="description" onChange={handleProductChange} />
                 </div>
                 <div className={`${classNames.formGroup}`}>
-                    <label htmlFor="availableUnits">Available Units</label>
-                    <input value={product.availableUnits} type="number" min={1} name="availableUnits" id="availableUnits" onChange={handleProductChange} />
+                    <label htmlFor="category">Category</label>
+                    <input value={product.category} type="text" name="category" id="category" onChange={handleProductChange} />
                 </div>
                 <div className={`${classNames.formGroup}`}>
                     <button className="btn-primary" type="submit">Save</button>
@@ -67,7 +67,7 @@ export const Products = () => {
                         <h3>{`${product.title} $${product.price.toFixed(2)}`}</h3>
                         <img src={product.image} alt={product.title} />
                         <p>{product.description} |</p>
-                        <p>{product.availableUnits} pzs</p>
+                        <p>{product.category}</p>
                     </div>
                 ))}
             </div>

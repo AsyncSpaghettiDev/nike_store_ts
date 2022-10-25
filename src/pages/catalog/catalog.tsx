@@ -3,7 +3,7 @@ import classNames from './catalog.module.css'
 import { DataService } from '../../services/dataService'
 
 import { useEffect, useState } from 'react'
-import { IProduct } from '../../types'
+import { Product as IProduct } from '../../types'
 
 import { Product } from '../../components/product'
 

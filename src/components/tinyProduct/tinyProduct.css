@@ -1,5 +1,8 @@
 .product_tiny {
     width: 200px;
+    min-width: 200px;
+    max-width: 250px;
+    aspect-ratio: 1;
 }
 
 .product_tiny img {

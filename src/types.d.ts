@@ -1,11 +1,10 @@
 // Product interface
-export interface IProduct {
+export interface Product {
     id: number;
     image: string;
     title: string;
     category: string;
     description: string;
-    availableUnits: number;
     price: number;
 }
 
@@ -14,13 +13,19 @@ export interface Coupon {
     discount: number;
 }
 
+export interface Cart_Product extends Product {
+    quantity: number;
+}
+
 export interface Store {
     user: User;
-    cart: IProduct[];
+    cart: Cart_Product[];
     signIn: (user: User) => void;
     signOut: () => void;
-    addToCart: (product: IProduct) => void;
-    removeFromCart: (product: IProduct) => void;
+    addToCart: (product: Product, quantity?: number) => void;
+    getCount: () => number;
+    getTotal: () => number;
+    removeFromCart: (product: Product) => void;
     clearCart: () => void;
 }
 
