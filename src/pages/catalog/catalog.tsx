@@ -13,7 +13,7 @@ export const Catalog = () => {
     useEffect(() => {
         console.log('Catalog was loaded')
         const dataService = new DataService()
-        setProducts(dataService.getCatalog())
+        dataService.getCatalog().then(setProducts)
     }, [])
 
     return (
@@ -22,7 +22,7 @@ export const Catalog = () => {
             <h2 className={classNames.subtitle}>We have {products.length} amazing products waiting for you </h2>
             <div className={classNames.products}>
                 {products.map((product) => (
-                    <Product key={product.id} {...product} />
+                    <Product key={product._id} {...product} />
                 ))}
             </div>
         </div>

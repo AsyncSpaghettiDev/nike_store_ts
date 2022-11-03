@@ -32,11 +32,11 @@ export const GlobalContext = ({ children }: Props) => {
 
     const addToCart = (product: Product, quantity: number = 1) => {
         console.log("adding to cart")
-        const productInCart = cart.find((item) => item.id === product.id)
+        const productInCart = cart.find((item) => item._id === product._id)
         if (productInCart) {
             setCart(
                 cart.map((item) =>
-                    item.id === product.id
+                    item._id === product._id
                         ? { ...item, quantity: item.quantity + quantity }
                         : item
                 )
@@ -53,7 +53,7 @@ export const GlobalContext = ({ children }: Props) => {
 
     const removeFromCart = (product: Product) => {
         console.log("removing from cart")
-        setCart(cart.filter((item) => item.id !== product.id))
+        setCart(cart.filter((item) => item._id !== product._id))
     }
 
     const clearCart = () => {

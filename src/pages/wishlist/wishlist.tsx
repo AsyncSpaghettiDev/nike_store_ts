@@ -11,8 +11,7 @@ export const Wishlist = () => {
     const [productSearch, setProductSearch] = useState<string>("")
 
     useEffect(() => {
-        const dataService = new DataService()
-        setCatalog(dataService.getCatalog())
+        new DataService().getCatalog().then(setCatalog)
     }, [])
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => setProductSearch(e.target.value)
@@ -50,8 +49,8 @@ export const Wishlist = () => {
                 <button>Add</button>
             </form>
             <div className={classNames.items}>
-                {wishlist.map((product) => (
-                    <TinyProduct key={product.id} image={product.image} title={product.title}></TinyProduct>
+                {wishlist?.map((product) => (
+                    <TinyProduct key={product._id} image={product.image} title={product.title}></TinyProduct>
                 ))}
 
             </div>

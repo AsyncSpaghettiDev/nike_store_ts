@@ -16,7 +16,7 @@ import { Product as Props } from '../../types'
 
 import './product.css'
 
-export const Product: FC<Props> = ({ id, image, title, description, price, category }) => {
+export const Product: FC<Props> = ({ _id, image, title, description, price, category }) => {
     const [total, setTotal] = useState(price)
     const [quantity, setQuantity] = useState(1)
 
@@ -27,7 +27,7 @@ export const Product: FC<Props> = ({ id, image, title, description, price, categ
     }
 
     const addToCartHandler = () => {
-        const product = { id, image, title, description, price, total, category }
+        const product = { _id, image, title, description, price, total, category }
         addToCart(product, quantity)
     }
     const fakePreviousPrice = useMemo(() => price + 10 + Math.floor(Math.random() * 100), [price])

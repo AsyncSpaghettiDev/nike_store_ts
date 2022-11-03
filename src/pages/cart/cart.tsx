@@ -12,7 +12,7 @@ export const Cart = () => {
             <div className="d-flex gap-4">
                 <div className={`${classNames.products} d-flex gap-2 flex-wrap justify-content-evenly`}>
                     {cart.map((product) => (
-                        <TinyProduct key={product.id} image={product.image} title={product.title} quantity={product.quantity} price={product.price} ></TinyProduct>
+                        <TinyProduct key={product._id} image={product.image} title={product.title} quantity={product.quantity} price={product.price} ></TinyProduct>
                     ))}
                 </div>
                 <div className={`${classNames.receipt} d-flex flex-column`}>
@@ -27,7 +27,7 @@ export const Cart = () => {
                         </thead>
                         <tbody>
                             {cart.map((product) => (
-                                <tr key={product.id}>
+                                <tr key={product._id}>
                                     <td>{product.title}</td>
                                     <td className="text-center">{product.quantity}</td>
                                     <td className="text-center">${(product.price * product.quantity).toFixed(2)}</td>

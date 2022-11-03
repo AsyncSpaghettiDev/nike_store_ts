@@ -1,6 +1,6 @@
 // Product interface
 export interface Product {
-    id: number;
+    _id?: number;
     image: string;
     title: string;
     category: string;
@@ -9,6 +9,7 @@ export interface Product {
 }
 
 export interface Coupon {
+    _id?: string;
     code: string;
     discount: number;
 }
